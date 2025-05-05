@@ -138,11 +138,9 @@ controllers/webhookController.js
 
     const TestResult = require('../models/testResult');
     const Result = require('../models/results');
-
     const receiveWebhook = async (req, res) => {
     try {
         const { payload_type, payload_status, test, link, result } = req.body;
-
         await TestResult.create({
         payloadType: payload_type,
         payloadStatus: payload_status,
@@ -239,3 +237,6 @@ This system will:
     Save it into two separate tables (test_results and results)
     Keep the schema updated with sync({ alter: true })
     Run easily with nodemon during development
+
+1. nodemon server.js
+2. ngrok http 3000
