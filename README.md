@@ -139,7 +139,9 @@ controllers/webhookController.js
     const TestResult = require('../models/testResult');
     const Result = require('../models/results');
     const receiveWebhook = async (req, res) => {
+
     try {
+        
         const { payload_type, payload_status, test, link, result } = req.body;
         await TestResult.create({
         payloadType: payload_type,
