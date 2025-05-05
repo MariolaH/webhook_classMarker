@@ -19,13 +19,6 @@ const Result = sequelize.define('Result', {
     },
   }, {
     tableName: 'results',
-    indexes: [
-      {
-        // Also includes a composite uniqueness constraint (no two rows can have the same student + class combination).
-        unique: true,
-        fields: ['studentId', 'classId'], // composite uniqueness
-      },
-    ],
   });
 
   
